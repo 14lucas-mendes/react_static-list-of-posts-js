@@ -1,15 +1,15 @@
-export const CommentInfo = ({ comments, user }) => (
+import { UserInfo } from '../UserInfo/UserInfo';
+
+export const CommentInfo = ({ comment, users }) => (
   <div className="CommentInfo">
     <div className="CommentInfo__title">
-      <strong className="CommentInfo__name">{comments.name}</strong>
+      <strong className="CommentInfo__name">{comment.name}</strong>
 
       {' by '}
 
-      <a className="CommentInfo__email" href={`mailto:${user.email}`}>
-        Telly_Lynch@karl.co.uk
-      </a>
+      <UserInfo user={users} />
     </div>
 
-    <div className="CommentInfo__body">{comments.body}</div>
+    <div className="CommentInfo__body">{comment.body}</div>
   </div>
 );

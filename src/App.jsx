@@ -4,8 +4,8 @@ import postsFromServer from './api/posts.json';
 import commentsFromServer from './api/comments.json';
 import usersFromServer from './api/users.json';
 
-import { PostInfo } from './components/PostInfo/PostInfo';
-import { CommentInfo } from './components/CommentInfo';
+import { CommentList } from './components/CommentList/CommentList';
+import { PostList } from './components/PostList/PostList';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
@@ -27,12 +27,10 @@ export const App = () => (
 
     <div className="PostList">
       <div className="PostInfo">
-        <PostInfo posts={posts} />
+        <PostList post={posts} />
       </div>
       <div className="CommentList">
-        <div className="CommentInfo">
-          <CommentInfo comments={comments} />
-        </div>
+        <CommentList comment={comments} />
       </div>
     </div>
   </section>

@@ -1,18 +1,18 @@
-export const PostInfo = ({ posts, user }) => (
+import { UserInfo } from '../UserInfo/UserInfo';
+
+export const PostInfo = ({ post, users }) => (
   <div className="PostInfo">
     <div className="PostInfo__header">
-      <h3 className="PostInfo__title">{posts.title}</h3>
+      <h3 className="PostInfo__title">{post.title}</h3>
 
       <p>
         {' Posted by  '}
 
-        <a className="UserInfo" href={`mailto:${user.email}`}>
-          {user.name}
-        </a>
+        <UserInfo user={users} />
       </p>
     </div>
 
-    <p className="PostInfo__body">{posts.body}</p>
+    <p className="PostInfo__body">{post.body}</p>
 
     <hr />
 
